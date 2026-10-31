@@ -1,9 +1,8 @@
 void main() {
 
-    var tr = new TransactionIngestor("PS_20174392719_1491204439457_log.csv");
+    var tr = new TransactionIngestor("paysim_with_bad_data.csv");
     var tenTransactions = tr.readTransactionsArchive()
-            .stream().
-            limit(10)
+            .stream()
             .toList();
 
     tenTransactions.forEach(System.out::println);
