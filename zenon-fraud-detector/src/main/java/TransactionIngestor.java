@@ -22,7 +22,7 @@ public class TransactionIngestor {
             String line;
             int counter = 0;
 
-            while ((line = br.readLine()) != null && counter <= 1000) {
+            while ((line = br.readLine()) != null && counter <= 50000) {
                 if (counter > 0) {
                     try {
                         String[] fields = line.split(",");

@@ -1,11 +1,13 @@
 import java.math.BigDecimal;
 import java.util.EnumSet;
+import java.util.function.Function;
 
 public record Transaction(int step, TypeCategory type, BigDecimal amount,
                           String nameOrig, BigDecimal oldBalanceOrg,
                           BigDecimal newBalanceOrig, String nameDest,
                           BigDecimal oldBalanceDest, BigDecimal newBalanceDest,
                           boolean isFraud, boolean isFlaggedFraud) {
+
 
     public Transaction {
         if (step < 1) {

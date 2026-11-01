@@ -1,9 +1,12 @@
 void main() {
 
-    var tr = new TransactionIngestor("paysim_with_bad_data.csv");
-    var tenTransactions = tr.readTransactionsArchive()
-            .stream()
-            .toList();
+    var tr = new TransactionIngestor("PS_20174392719_1491204439457_log.csv");
+    var listTransactions = tr.readTransactionsArchive();
+    var fraudAnalyzer = new FraudAnalyzer(listTransactions);
 
-    tenTransactions.forEach(System.out::println);
+    fraudAnalyzer.totalFraudsNumber();
+    fraudAnalyzer.topThreeFrauds();
+    fraudAnalyzer.suspectClientsList();
+    fraudAnalyzer.totalLoss();
+    fraudAnalyzer.fraudTypesList();
 }
